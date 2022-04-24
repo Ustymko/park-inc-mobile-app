@@ -17,7 +17,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ParkInc",
+      "config": {
+        "googleMapsApiKey": "AIzaSyB_r0s5hYPxUszkW1HJkI0nqFpEhq92WrU"
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -27,6 +31,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "",
+    "githubUrl": "https://github.com/Ustymko/reactTest"
   }
 }
