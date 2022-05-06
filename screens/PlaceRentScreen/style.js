@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
   container: {
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
-    position: 'relative',
+    // position: 'relative',
     
     //backgroundColor: '#e6e6e6',
     //marginTop: '2%'
