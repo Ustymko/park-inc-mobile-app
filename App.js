@@ -1,9 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen';
 import MapScreen from './screens/MapScreen';
-
+import PlaceRentScreen from './screens/PlaceRentScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,11 +15,14 @@ const App = () => {
         <Stack.Screen
           name = "Home"
           component={HomeScreen}
-          options = {{title: "Welcome"}}
         />
         <Stack.Screen 
           name = "Map"
           component={MapScreen} 
+        />
+        <Stack.Screen
+          name = "PlaceRent"
+          component={PlaceRentScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

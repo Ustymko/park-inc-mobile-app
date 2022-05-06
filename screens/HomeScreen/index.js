@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { View, ScrollView, TouchableOpacity, Button } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import ParkingPlace from '../../components/ParkingPlace'
 import NewParkingSpaceButton from '../../components/NewParkingSpaceButton';
 import FindParkingPlaceButton from '../../components/FindParkingPlaceButton';
@@ -14,7 +14,7 @@ const HomeScreen = ({ navigation }) => {
               <ParkingPlace placeNumber = '2' placeAddress = 'Shevchenka 11'/>
               <ParkingPlace isAvaliable = 'true' placeNumber = '3' placeAddress = 'Shevchenka 12'/>
               <ParkingPlace isAvaliable = 'true' placeNumber = '4' placeAddress = 'Shevchenka 13'/>
-              <ParkingPlace placeNumber = '5' placeAddress = 'Shevchenka 14'/>
+              
               <ParkingPlace isAvaliable = 'true' placeNumber = '5' placeAddress = 'Shevchenka 14'/>
               <ParkingPlace isAvaliable = 'true' placeNumber = '6' placeAddress = 'Shevchenka 15'/>
               <ParkingPlace isAvaliable = 'true' placeNumber = '7' placeAddress = 'Shevchenka 16'/>
