@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React from 'react';
 import {
     Text,
-    View,
+    SafeAreaView,
     TextInput,
     TouchableOpacity
 } from 'react-native'
@@ -10,24 +10,34 @@ import { useNavigation } from "@react-navigation/native";
 
 const RegistrationForm = (props) => {
     const navigation = useNavigation();
+    const [email, Email] = React.useState("");
+    const [password, Password] = React.useState("");
+
     return(
-        <View style={styles.registration}>
+        <SafeAreaView style={styles.registration}>
+            <Text style={styles.parkinc}>Park.inc</Text>
+
             <Text style={styles.header}>Registration</Text>
+            
+            <TextInput style ={styles.textinput} placeholder="Your email"
+            underlineColorAndroid={'transparent'} keyboardType = "email-address" 
+            onChangeText={Email} value={email} 
+            />
 
-            <TextInput style={{width: 100, height: 40, margin: 12, borderWidth: 2, padding: 10}} placeholder="some"/>
-                
-            {/* <TextInput styles ={styles.textinput} onChangeText={onChangeText} value={text} /> */}
+            <TextInput style ={styles.textinput} placeholder="Your password"
+            secureTextEntry={true} underlineColorAndroid={'transparent'} 
+            onChangeText={Password} value={password}
+            /> 
 
-            {/* <TextInput styles ={styles.textinput} placeholder="Your password"
-            secureTextEntry={true} underlineColorAndroid={'transparent'} />
-
-            <TextInput styles ={styles.textinput} placeholder="Confirm password"
-            secureTextEntry={true} underlineColorAndroid={'transparent'} /> */}
-
+            <TextInput style ={styles.textinput} placeholder="Confirm password"
+            secureTextEntry={true} underlineColorAndroid={'transparent'}
+            />
+            
+            
             <TouchableOpacity onPress={() => navigation.navigate("Home")} style={styles.button}>
                 <Text style={styles.btntext}>Sign up</Text>
             </TouchableOpacity>
-        </View>
+        </SafeAreaView>
     );
 }
 
