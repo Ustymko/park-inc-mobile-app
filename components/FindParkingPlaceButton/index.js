@@ -3,12 +3,12 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import styles from "./style";
 import { useNavigation } from "@react-navigation/native";
 
-function FindParkingPlaceButton ({screenName}) {
+function FindParkingPlaceButton () {
 
   const navigation = useNavigation();
 
     return(
-        <TouchableOpacity onPress={() => navigation.navigate(screenName)} style = {styles.findPlace}>
+        <TouchableOpacity onPress={() => navigation.navigate("Map")} style = {styles.findPlace}>
           
           <View style = {styles.button}>
             <Text style = {styles.buttonText}>Find a parking place</Text>
