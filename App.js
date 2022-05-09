@@ -8,7 +8,7 @@ import PlaceRentScreen from './screens/PlaceRentScreen';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
-
+  
   return(
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>

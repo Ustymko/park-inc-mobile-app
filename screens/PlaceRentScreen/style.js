@@ -1,23 +1,22 @@
-import {StyleSheet, Dimensions} from 'react-native';
+import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
-    // position: 'relative',
+    width: '100%',
+    flex: 1,
     
     //backgroundColor: '#e6e6e6',
     //marginTop: '2%'
-    alignItems: 'center',
+    //alignItems: 'center',
     //justifyContent: 'center',
   },
-  infoAboutParkingPlace:{
+  topPanel:{
     
     backgroundColor: '#0893cf',
     alignItems: 'center',
     height: '7%'
   }, 
-  infoAboutParkingPlaceText:{
+  topPanelText:{
     flex: 5,
     color: '#ffffff',
     fontSize: 35,
@@ -32,24 +31,51 @@ const styles = StyleSheet.create({
     fontSize: 35
   },
   garagePhoto:{
+    flex: 1,
     width: 200,
     height: 300,
     borderRadius: 20,
     marginTop: 5,
-    marginLeft: 5    
+    marginLeft: 5
   },
   rentButton:{
     position: 'absolute',
     backgroundColor:'#0893cf',
     bottom: 0,
-    width:'80%',
+    width:'100%',
     alignItems: 'center',
-    marginLeft: '10%'
+    paddingVertical: 8
+    
   },
   rentButtonText:{
     color: '#ffffff',
-    fontSize: 35
+    fontSize: 40,
+  }, 
+  touchableOpacity:{
+    backgroundColor: '#85de9d',
+    alignSelf: 'stretch',
+    paddingHorizontal: 20,
+  }, 
+  modalPickerView:{
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
+    marginTop: 10,
+  }, 
+  text:{
+    marginVertical: 12,
+    fontSize: 25,
+  },
+  parkingPlaceInfo:{
+    height: '40%',
+
+  },
+  parkingPlaceTextInfo:{
+    flex: 1,
+    alignItems: 'center',
+    marginTop: 20,
   }
+
 })
 
 export default styles;
