@@ -4,7 +4,7 @@
     "slug": "TestApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/transparent-parkinc_logo_bezpalki.png",
     "splash": {
       "image": "./assets/parkinc_logo0_1.png",
       "resizeMode": "cover",
