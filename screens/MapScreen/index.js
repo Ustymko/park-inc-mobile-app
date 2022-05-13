@@ -5,55 +5,79 @@ import * as Location from 'expo-location';
 import Constants from 'expo-constants';
 import { Platform, Text, View, Button } from 'react-native';
 import React, {useState, useEffect} from 'react';
+import delayAsync from 'delay-async';
 
-const MapScreen = (props) => {
-  const [location, setLocation] = useState(null);
-  const [errorMsg, setErrorMsg] = useState(null);
-  const [customLatitude, setCustomLatitude] = useState(null);
-  const [customLongitude, setCustomLongitude] = useState(null);
-  useEffect(() => {
-    (async () => {
-      if (Platform.OS === 'android' && !Constants.isDevice) {
-        setErrorMsg(
-          'Oops, this will not work on Snack in an Android Emulator. Try it on your device!'
-        );
-        return;
-      }
-      let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        setErrorMsg('Permission to access location was denied');
-        return;
-      }
+// const Map = async() => {
 
-      let location = await Location.getCurrentPositionAsync({});
-      setCustomLatitude(location.coords.latitude);
-      setCustomLongitude(location.coords.longitude);
-      setLocation(location);
+//     await delayAsync(5000);
+  
+//   // const coords = {
+//   //   latitude: props.customLatitude,
+//   //   longitude: props.customLongitude,
+//   // }
+//   return(
+//     // <MapView
+//     //   initialRegion={{
+//     //     latitude: coords.latitude,
+//     //     longitude: coords.longitude,
+//     //   }}
+//     // ></MapView>
+//     <Text>mapa</Text>
+//   )
+
+// }
+
+function MapScreen() {
+  // const [location, setLocation] = useState(null);
+  // const [errorMsg, setErrorMsg] = useState(null);
+  // const [customLatitude, setCustomLatitude] = useState(null);
+  // const [customLongitude, setCustomLongitude] = useState(null);
+  // useEffect(() => {
+  //   (async () => {
+  //     if (Platform.OS === 'android' && !Constants.isDevice) {
+  //       setErrorMsg(
+  //         'Oops, this will not work on Snack in an Android Emulator. Try it on your device! 46.75659424493789 -16.598196598698827'
+  //       );
+  //       return;
+  //     }
+  //     let { status } = await Location.requestForegroundPermissionsAsync();
+  //     if (status !== 'granted') {
+  //       setErrorMsg('Permission to access location was denied');
+  //       return;
+  //     }
+
+  //     let location = await Location.getCurrentPositionAsync({});
+  //     setCustomLatitude(location.coords.latitude);
+  //     setCustomLongitude(location.coords.longitude);
+  //     setLocation(location);
       
-    })();
-  }, []);
+      
+  //   })();
+  // }, []);
 
-  let text = 'Waiting..';
-  if (errorMsg) {
-    text = errorMsg;
-  } 
-
+  // let text = 'Waiting..';
+  // if (errorMsg) {
+  //   text = errorMsg;
+  // } 
+  
   const navigation = useNavigation();
     return (
-      
       <View style={styles.container}>
         <MapView 
         style={styles.map}
-        initialRegion={{
-          latitude: customLatitude,
-          longitude: customLongitude,
-          latitudeDelta: 0.0022,
-          longitudeDelta: 0.0021,
-        }} 
+        showsUserLocation={true}
+        showsMyLocationButton={true}
+        // followsUserLocation={true}
+        // initialRegion={{
+        //   latitude: customLatitude,
+        //   longitude: customLongitude,
+        //   latitudeDelta: 0.0022,
+        //   longitudeDelta: 0.0021,
+        // }} 
         >
           {/* <Marker coordinate={{
-            latitude: customLatitude,
-            longitude: customLongitude
+            latitude: latitudeCheck(),
+            longitude: longitudeCheck()
           }}
           pinColor='blue'>
 
@@ -89,7 +113,6 @@ const MapScreen = (props) => {
 
       </View>
 
-      //<Text>{customLatitude}</Text>
     );
   };
   

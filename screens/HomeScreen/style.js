@@ -19,6 +19,11 @@ const styles = StyleSheet.create({
     marginTop: '10%',
     marginHorizontal: 70,
     marginBottom: '25%'
+  },
+  homeScreenButtons:{
+    bottom: 0, 
+    position: 'absolute', 
+    width: '100%'
   }
   });
 

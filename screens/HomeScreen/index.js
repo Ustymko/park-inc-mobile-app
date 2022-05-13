@@ -2,16 +2,17 @@ import { StatusBar } from 'expo-status-bar';
 import { View, ScrollView, Platform } from 'react-native';
 import ParkingPlace from '../../components/ParkingPlace'
 import NewParkingSpaceButton from '../../components/NewParkingSpaceButton';
-import FindParkingPlaceButton from '../../components/FindParkingPlaceButton';
-
-import React, { useState, useEffect } from 'react';
+import HomeScreenButtons from '../../components/HomeScreenButtons';
+import HomeScreenTopPanel from '../../components/HomeScreenTopPanel';
+import React from 'react';
 import styles from './style';
 
 const HomeScreen = ({ navigation }) => {
   
     return (
       <View style={styles.container}>
-        <ScrollView style = {styles.scrollView}>
+        <HomeScreenTopPanel/>
+        {/* <ScrollView style = {styles.scrollView}>
             <View style={styles.parkingPlaces}>
               <ParkingPlace isAvaliable = 'true' placeNumber = '1' placeAddress = 'Shevchenka 10'/>
               <ParkingPlace placeNumber = '2' placeAddress = 'Shevchenka 11'/>
@@ -26,8 +27,11 @@ const HomeScreen = ({ navigation }) => {
               <ParkingPlace isAvaliable = 'true' placeNumber = '10' placeAddress = 'Shevchenka 19'/>
               <NewParkingSpaceButton/>
             </View>
-          </ScrollView>
-          <FindParkingPlaceButton/>
+          </ScrollView> */}
+          <View style={styles.homeScreenButtons}>
+            <HomeScreenButtons/>
+          </View>
+          
         <StatusBar style="auto" />
       </View>
     );

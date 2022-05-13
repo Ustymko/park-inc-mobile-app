@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
     //justifyContent: 'center',
   },
   topPanel:{
-    
     backgroundColor: '#0893cf',
     alignItems: 'center',
     height: '7%'

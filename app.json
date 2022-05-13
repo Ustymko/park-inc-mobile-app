@@ -18,6 +18,9 @@
     ],
     "ios": {
       "supportsTablet": true,
+      "infoPlist":{
+        "NSLocationWhenInUseUsageDescription": "Please allow this app to use your gps data to see your location on map"
+      },
       "bundleIdentifier": "com.ParkInc",
       "config": {
         "googleMapsApiKey": "AIzaSyB_r0s5hYPxUszkW1HJkI0nqFpEhq92WrU"
