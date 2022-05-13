@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     backgroundColor: '#e6e6e6',
-    //alignItems: 'center',
+    alignItems: 'center',
     //justifyContent: 'center',
   },
   parkingPlaces: {

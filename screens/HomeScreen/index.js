@@ -1,10 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { View, ScrollView, Platform } from 'react-native';
-import ParkingPlace from '../../components/ParkingPlace'
-import NewParkingSpaceButton from '../../components/NewParkingSpaceButton';
+import React from 'react';
+import { View, Text } from 'react-native';
 import HomeScreenButtons from '../../components/HomeScreenButtons';
 import HomeScreenTopPanel from '../../components/HomeScreenTopPanel';
-import React from 'react';
+import ParkingPlaceCloseToUser from '../../components/ParkingPlaceCloseToUser';
 import styles from './style';
 
 const HomeScreen = ({ navigation }) => {
@@ -12,6 +11,10 @@ const HomeScreen = ({ navigation }) => {
     return (
       <View style={styles.container}>
         <HomeScreenTopPanel/>
+        <Text style={{fontSize: 30}}>Places close to you</Text>
+        <ParkingPlaceCloseToUser address={"Kharkivska 4"} price={"20 hrn/hour"}/>
+        <ParkingPlaceCloseToUser address={"Kharkivska 5"} price={"15 hrn/hour"}/>
+        <ParkingPlaceCloseToUser address={"Kharkivska 6"} price={"17 hrn/hour"}/>
         {/* <ScrollView style = {styles.scrollView}>
             <View style={styles.parkingPlaces}>
               <ParkingPlace isAvaliable = 'true' placeNumber = '1' placeAddress = 'Shevchenka 10'/>
