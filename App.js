@@ -5,8 +5,8 @@ import HomeScreen from './screens/HomeScreen';
 import MapScreen from './screens/MapScreen';
 import PlaceRentScreen from './screens/PlaceRentScreen';
 import RegistrationScreen from './screens/RegistrationScreen';
-import { View } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import LoginScreen from './screens/LoginScreen';
+
 const Stack = createNativeStackNavigator();
 
 const App = () => {
@@ -17,6 +17,10 @@ const App = () => {
         <Stack.Screen
           name = "Registration"
           component={RegistrationScreen}
+        />
+        <Stack.Screen
+          name = "Login"
+          component={LoginScreen}
         />
         <Stack.Screen
           name = "Home"
@@ -32,9 +36,6 @@ const App = () => {
         />
       </Stack.Navigator>
     </NavigationContainer>
-    // <LinearGradient colors={['#0893cf', 'transparent']}>
-    //   <View style={{width: 100, height: 100, backgroundColor: 'black'}}></View>
-    // </LinearGradient>
   );
 };
 
