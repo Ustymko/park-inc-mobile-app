@@ -8,7 +8,7 @@ import {
 import styles from "./style";
 import { useNavigation } from "@react-navigation/native";
 
-const RegistrationForm = (props) => {
+const LoginForm = (props) => {
     const navigation = useNavigation();
     const [email, Email] = React.useState("");
     const [password, Password] = React.useState("");
@@ -17,7 +17,7 @@ const RegistrationForm = (props) => {
         <SafeAreaView style={styles.registration}>
             <Text style={styles.parkinc}>Park.inc</Text>
 
-            <Text style={styles.header}>Registration</Text>
+            <Text style={styles.header}>Login</Text>
             
             <TextInput style ={styles.textinput} placeholder="Your email"
             underlineColorAndroid={'transparent'} keyboardType = "email-address" 
@@ -29,22 +29,12 @@ const RegistrationForm = (props) => {
             onChangeText={Password} value={password}
             /> 
 
-            <TextInput style ={styles.textinput} placeholder="Confirm password"
-            secureTextEntry={true} underlineColorAndroid={'transparent'}
-            />
-            
-            
-            <TouchableOpacity onPress={() => navigation.navigate("Home")} style={styles.regbutton}>
-                <Text style={styles.btntext}>Sign up</Text>
+            <TouchableOpacity onPress={() => navigation.navigate("Home")} style={styles.button}>
+                <Text style={styles.btntext}>Sign in</Text>
             </TouchableOpacity>
-
-            <Text style={styles.loginUptxt}>Already registred?</Text>
-
-            <TouchableOpacity onPress={() => navigation.navigate("Login")} style={styles.logbutton}>
-                <Text style={styles.logintxt}>Sign in</Text>
-            </TouchableOpacity>
+            
         </SafeAreaView>
     );
 }
 
-export default RegistrationForm;
+export default LoginForm;

@@ -27,36 +27,16 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 10,
     },
-    regbutton:{
+    button:{
         alignSelf: 'stretch',
         alignItems: 'center',
         padding: 20,
         backgroundColor: '#199187',
         marginTop: 30,
     },
-    logbutton:{
-        alignSelf: 'stretch',
-        alignItems: 'center',
-        padding: 20,
-        borderBottomWidth: 1,
-        borderBottomStartRadius: 100,
-        borderBottomEndRadius: 100,
-        borderBottomColor: '#199187'
-    },
     btntext:{
         color: '#fff',
         fontWeight: 'bold',
-    },
-    logintxt:{
-        fontSize: 24,
-        color: '#fff',
-        fontWeight: 'bold',
-    },
-    loginUptxt:{
-        color: '#fff',
-        textAlign: 'center',
-        fontWeight: 'bold',
-        marginTop: 50,
     }
     
 });
