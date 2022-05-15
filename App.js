@@ -5,7 +5,8 @@ import HomeScreen from './screens/HomeScreen';
 import MapScreen from './screens/MapScreen';
 import PlaceRentScreen from './screens/PlaceRentScreen';
 import RegistrationScreen from './screens/RegistrationScreen';
-
+import { View } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
@@ -31,6 +32,9 @@ const App = () => {
         />
       </Stack.Navigator>
     </NavigationContainer>
+    // <LinearGradient colors={['#0893cf', 'transparent']}>
+    //   <View style={{width: 100, height: 100, backgroundColor: 'black'}}></View>
+    // </LinearGradient>
   );
 };
 

@@ -11,7 +11,7 @@ const HomeScreen = ({ navigation }) => {
     return (
       <View style={styles.container}>
         <HomeScreenTopPanel/>
-        <Text style={{fontSize: 30}}>Places close to you</Text>
+        <Text style={{fontSize: 30, color:'black'}}>Places close to you</Text>
         <ParkingPlaceCloseToUser address={"Kharkivska 4"} price={"20 hrn/hour"}/>
         <ParkingPlaceCloseToUser address={"Kharkivska 5"} price={"15 hrn/hour"}/>
         <ParkingPlaceCloseToUser address={"Kharkivska 6"} price={"17 hrn/hour"}/>

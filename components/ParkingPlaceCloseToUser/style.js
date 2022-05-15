@@ -3,8 +3,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     parkingPlace:{
         backgroundColor: '#69aff5',
-        width: '100%',
-        marginBottom: 15,
+        margin: 15,
         height: '15%',
         flexDirection: 'row',
         alignItems:'center',
@@ -21,7 +20,8 @@ const styles = StyleSheet.create({
     },
     details:{
         fontSize: 35,
-        marginLeft: '10%',
+        //marginLeft: '5%',
+        margin: '5%',
         backgroundColor: '#95c5f5',
         padding: 15,
     }
