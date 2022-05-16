@@ -9,9 +9,9 @@ function HomeScreenTopPanel(){
     const navigation = useNavigation();
     return(
         <View style={[styles.panel, {marginTop: statusBarHeight}]}>
-            <View style={{flex: 1}}>
+            <TouchableOpacity onPress={() => navigation.navigate("Account")} style={{flex: 1}}>
                 <Image style={styles.avatar} source={require('../../assets/avatardefault.png')}/>
-            </View>
+            </TouchableOpacity>
             
             <Text style={styles.panelText}>Park.inc</Text>
             <View style={{flex: 1}}>
