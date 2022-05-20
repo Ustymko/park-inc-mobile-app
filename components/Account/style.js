@@ -1,23 +1,19 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 const styles = StyleSheet.create({
 
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'flex-start',
-        backgroundColor: '#87CEEB',
-        paddingLeft: 60,
-        paddingRight: 60,
+        justifyContent: 'center',
     },
 
     scrollView: {
-        width: 370,
+        width: Dimensions.get('window').width - 20,
         height: 200,
-        margin: 20,
-        
-
+        margin: 10,
       },
+
     textinput: {
         height: 40,
         width: 250 ,
@@ -27,22 +23,26 @@ const styles = StyleSheet.create({
         borderBottomWidth: 2,
         padding: 10,
     },
+
     avatar:{
         width: 180,
         height: 180,
         marginTop: 30,
 
     },
+
     changephoto:{
 
     },
+
     history:{
         marginTop: 50,
         fontSize:30,
     },
+    
     historyParkingPlace:{
         height: 100,
-        width: 370,
+        width: 400,
         backgroundColor: '#fff',
         marginBottom: 10
     }
