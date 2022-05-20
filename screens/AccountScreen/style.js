@@ -1,11 +1,15 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-    randomText:{
+    container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
-    }
+        justifyContent: 'flex-start',
+        backgroundColor: '#87CEEB',
+        paddingLeft: 60,
+        paddingRight: 60,
+    },
+
 })
 
 export default styles;

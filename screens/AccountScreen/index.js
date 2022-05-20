@@ -1,12 +1,11 @@
-import { useNavigation } from '@react-navigation/native';
 import {Text, View} from 'react-native';
 import styles from './style';
+import Account from '../../components/Account';
 
-const AccountScreen = () =>{
-    const navigation = useNavigation();
+const AccountScreen = ({navigation}) =>{
     return(
-        <View style={styles.randomText}>
-            <Text >This is your account</Text>
+        <View style={styles.container}>
+            <Account/>
         </View>
     )
 }
