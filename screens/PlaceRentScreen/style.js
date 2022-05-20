@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     fontSize: 40,
   }, 
   touchableOpacity:{
-    backgroundColor: '#85de9d',
+    backgroundColor: '#e2fad7',
     alignSelf: 'stretch',
     paddingHorizontal: 20,
   }, 

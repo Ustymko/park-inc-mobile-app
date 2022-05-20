@@ -67,6 +67,7 @@ function MapScreen() {
         style={styles.map}
         showsUserLocation={true}
         showsMyLocationButton={true}
+        
         // followsUserLocation={true}
         // initialRegion={{
         //   latitude: customLatitude,
