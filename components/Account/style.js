@@ -14,7 +14,8 @@ const styles = StyleSheet.create({
     scrollView: {
         width: 370,
         height: 200,
-        marginBottom: 20,
+        margin: 20,
+        
 
       },
     textinput: {
