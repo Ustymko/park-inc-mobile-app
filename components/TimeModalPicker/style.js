@@ -13,8 +13,6 @@ const styles = StyleSheet.create({
         borderColor:'#0893cf',
         borderWidth: 5,
         alignItems: 'center',
-
-        
     },
     date:{
         fontSize: 35,
