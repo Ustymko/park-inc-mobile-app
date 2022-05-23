@@ -1,11 +1,11 @@
 import styles from './style';
 import MapView, { Callout, Marker } from 'react-native-maps';
 import { useNavigation } from '@react-navigation/native';
-import * as Location from 'expo-location';
-import Constants from 'expo-constants';
 import { Platform, Text, View, Button } from 'react-native';
 import React, {useState, useEffect} from 'react';
-import delayAsync from 'delay-async';
+import Constants from 'expo-constants'
+
+const statusBarHeight = Constants.statusBarHeight
 
 // const Map = async() => {
 
@@ -62,26 +62,12 @@ function MapScreen() {
   
   const navigation = useNavigation();
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, {marginTop: statusBarHeight}]}>
         <MapView 
         style={styles.map}
         showsUserLocation={true}
-        showsMyLocationButton={true}
-        // followsUserLocation={true}
-        // initialRegion={{
-        //   latitude: customLatitude,
-        //   longitude: customLongitude,
-        //   latitudeDelta: 0.0022,
-        //   longitudeDelta: 0.0021,
-        // }} 
+        showsMyLocationButton={true} 
         >
-          {/* <Marker coordinate={{
-            latitude: latitudeCheck(),
-            longitude: longitudeCheck()
-          }}
-          pinColor='blue'>
-
-          </Marker> */}
           <Marker coordinate={{
             latitude: 49.8455084,
             longitude: 24.0438791
@@ -105,11 +91,6 @@ function MapScreen() {
             </Callout>
           </Marker>
         </MapView>
-        
-        {/* <Button
-            onPress = {() => navigation.navigate("Home")}
-            title = "Home"
-        /> */}
 
       </View>
 

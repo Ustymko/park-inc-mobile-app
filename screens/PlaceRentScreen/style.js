@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#85de9d',
     alignSelf: 'stretch',
     paddingHorizontal: 20,
+    marginTop: 15,
   }, 
   modalPickerView:{
     alignItems: 'center',

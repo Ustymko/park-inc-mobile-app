@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
         fontSize: 40,
         color: 'white',
         flex: 4,
-        marginLeft: '18%'
-        // marginLeft: '16%',
+        marginLeft: '18%',
+
 
     },
     avatar:{

@@ -1,15 +1,18 @@
-import { Text, View, TouchableOpacity, Image, Modal, TextInput } from "react-native"
+import { Text, View, TouchableOpacity, Image, Modal } from "react-native"
 import styles from "./style"
 import Constants from 'expo-constants'
 import React, {useState} from 'react'
 import {DateModalPicker} from '../../components/DateModalPicker'
+import { TimeModalPicker } from "../../components/TimeModalPicker"
 
 const statusBarHeight = Constants.statusBarHeight
 
 const PlaceRentScreen = ({navigation}) => {
     var backButton = "<--"
     const [chooseData, setChooseData] = useState('Choose the date')
+    const [chooseTime, setChooseTime] = useState('Choose time gap')
     const [isModalVisible, setisModalVisible] = useState(false)
+    const [isTimeModalVisible, setIsTimeModalVisible] = useState(false)
 
     const changeModalVisibility = (bool) => {
         setisModalVisible(bool)
@@ -18,6 +21,15 @@ const PlaceRentScreen = ({navigation}) => {
     const setData = (option) => {
         setChooseData(option)
     }
+
+    const changeTimeModalVisibility = (bool) => {
+        setIsTimeModalVisible(bool)
+    }
+
+    const setTime = (option) => {
+        setChooseTime(option)
+    }
+
     return(
         <View style={[styles.container, {marginTop: statusBarHeight}]}>
             <View style={[styles.topPanel, {flexDirection: "row"}]}>
@@ -51,7 +63,7 @@ const PlaceRentScreen = ({navigation}) => {
                 </TouchableOpacity>
                 <Modal
                     transparent={true}
-                    animationType='none'
+                    animationType='slide'
                     visible={isModalVisible}
                     onRequestClose={() => changeModalVisibility(false)}
                 >
@@ -60,8 +72,25 @@ const PlaceRentScreen = ({navigation}) => {
                         setData={setData}
                     />
                 </Modal>
+                <TouchableOpacity 
+                    onPress={() => changeTimeModalVisibility(true)}
+                    style={styles.touchableOpacity}
+                    
+                >
+                    <Text style={styles.text}>{chooseTime}</Text>
+                </TouchableOpacity>
+                <Modal
+                    transparent={true}
+                    animationType='slide'
+                    visible={isTimeModalVisible}
+                    onRequestClose={() => changeTimeModalVisibility(false)}
+                >
+                    <TimeModalPicker
+                        changeTimeModalVisibility={changeTimeModalVisibility}
+                        setTime={setTime}
+                    />
+                </Modal>
             </View>
-            <Text></Text>
             <TouchableOpacity style={styles.rentButton}>
                 <Text style={styles.rentButtonText}>Rent</Text>
             </TouchableOpacity>

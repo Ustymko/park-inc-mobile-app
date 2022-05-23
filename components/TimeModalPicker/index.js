@@ -2,14 +2,14 @@ import React from 'react'
 import {Text, View, ScrollView, TouchableOpacity, Dimensions} from 'react-native'
 import styles from './style'
 
-const OPTIONS = ['9.05', '10.05', '11.05', '12.05', '13.05', '14.05']
+const OPTIONS = ['10:00 - 11:00', '11:00 - 12:00', '12:00 - 13:00']
 const WIDTH = Dimensions.get('window').width
 const HEIGHT = Dimensions.get('window').height
-const DateModalPicker = (props) => {
+const TimeModalPicker = (props) => {
 
     const onPressItem = (option) =>{
-        props.changeModalVisibility(false);
-        props.setData(option)
+        props.changeTimeModalVisibility(false);
+        props.setTime(option)
     }
     const option = OPTIONS.map((item, index) => {
         return(
@@ -26,9 +26,9 @@ const DateModalPicker = (props) => {
     return(
         <TouchableOpacity
         style={styles.container}
-        onPress={() => props.changeModalVisibility(false)}>
-            <View style={[styles.modal, {width: WIDTH - 120, height: HEIGHT/2}]}>
-                <ScrollView>
+        onPress={() => props.changeTimeModalVisibility(false)}>
+            <View style={[styles.modal, {width: WIDTH - 90, height: HEIGHT/2}]}>
+                <ScrollView style={styles.scrollView}>
                     {option}
                 </ScrollView>
             </View>
@@ -37,4 +37,4 @@ const DateModalPicker = (props) => {
 
 }
 
-export {DateModalPicker}
+export {TimeModalPicker}
