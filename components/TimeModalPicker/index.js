@@ -2,7 +2,9 @@ import React from 'react'
 import {Text, View, ScrollView, TouchableOpacity, Dimensions} from 'react-native'
 import styles from './style'
 
-const OPTIONS = ['10:00 - 11:00', '11:00 - 12:00', '12:00 - 13:00']
+const OPTIONS = ['10:00 - 11:00', '11:00 - 12:00', '12:00 - 13:00',
+                '13:00 - 14:00', '14:00 - 15:00', '15:00 - 16:00',
+                '16:00 - 17:00', '17:00 - 18:00']
 const WIDTH = Dimensions.get('window').width
 const HEIGHT = Dimensions.get('window').height
 const TimeModalPicker = (props) => {
@@ -28,7 +30,7 @@ const TimeModalPicker = (props) => {
         style={styles.container}
         onPress={() => props.changeTimeModalVisibility(false)}>
             <View style={[styles.modal, {width: WIDTH - 90, height: HEIGHT/2}]}>
-                <ScrollView style={styles.scrollView}>
+                <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
                     {option}
                 </ScrollView>
             </View>

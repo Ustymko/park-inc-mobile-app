@@ -18,9 +18,11 @@ const styles = StyleSheet.create({
         fontSize: 35,
         marginTop: 10
     },
-    // scrollView:{
-    //     marginTop: 20,
-    // }
+    scrollView:{
+        marginTop: 20,
+        marginBottom: 20
+        
+    }
 })
 
 export default styles
