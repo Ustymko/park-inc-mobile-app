@@ -12,9 +12,9 @@ const HomeScreen = ({ navigation }) => {
       <View style={styles.container}>
         <HomeScreenTopPanel/>
         <Text style={{fontSize: 30, color:'black'}}>Places close to you</Text>
-        <ParkingPlaceCloseToUser address={"Kharkivska 4"} price={"20 hrn/hour"}/>
-        <ParkingPlaceCloseToUser address={"Kharkivska 5"} price={"15 hrn/hour"}/>
-        <ParkingPlaceCloseToUser address={"Kharkivska 6"} price={"17 hrn/hour"}/>
+        <ParkingPlaceCloseToUser owner={"**ras Klo**"} address={"Kharkivska 4"} price={"20 hrn/hour"}/>
+        <ParkingPlaceCloseToUser owner={"**riy Rozhankivsk**"} address={"Kharkivska 5"} price={"15 hrn/hour"}/>
+        <ParkingPlaceCloseToUser owner={"**riy Reshetn**"} address={"Kharkivska 6"} price={"17 hrn/hour"}/>
         {/* <ScrollView style = {styles.scrollView}>
             <View style={styles.parkingPlaces}>
               <ParkingPlace isAvaliable = 'true' placeNumber = '1' placeAddress = 'Shevchenka 10'/>

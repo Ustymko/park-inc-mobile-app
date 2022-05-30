@@ -7,7 +7,8 @@ import { TimeModalPicker } from "../../components/TimeModalPicker"
 
 const statusBarHeight = Constants.statusBarHeight
 
-const PlaceRentScreen = ({navigation}) => {
+const PlaceRentScreen = ({route, navigation}) => {
+    const {owner, address, price} = route.params
     var backButton = "<--"
     const [chooseData, setChooseData] = useState('Choose the date')
     const [chooseTime, setChooseTime] = useState('Choose time gap')
@@ -56,7 +57,7 @@ const PlaceRentScreen = ({navigation}) => {
         <View style={[styles.container, {marginTop: statusBarHeight}]}>
             <View style={[styles.topPanel, {flexDirection: "row"}]}>
                 <TouchableOpacity
-                   onPress = {() => navigation.navigate("Map")}
+                   onPress = {() => navigation.navigate("Home")}
                    style={styles.backButton}
                 >
                     <Text style={styles.backButtonArrow}>{backButton}</Text>
@@ -67,10 +68,11 @@ const PlaceRentScreen = ({navigation}) => {
             <View style={[styles.parkingPlaceInfo, {flexDirection:'row'}]}>
                 <Image style={styles.garagePhoto} source={require('../../assets/garage1.png')}/>
                 <View style={styles.parkingPlaceTextInfo}>
-                    <Text style={{marginTop: 30, fontSize: 20}}>Owner:</Text>
-                    <Text style={{fontSize: 30}}>Taras Kloba</Text>
+                    <Text style={{marginTop: 15, fontSize: 18}}>Owner:</Text>
+                    <Text style={{fontSize: 27, textAlign:'center'}}>{owner}</Text>
                     <Text style={{marginTop: 20, fontSize: 20}}>Address:</Text>
-                    <Text style={{fontSize: 28, textAlign:'center'}}>Chornovola 10</Text>
+                    <Text style={{fontSize: 28, textAlign:'center'}}>{address}</Text>
+                    <Text style={{fontSize: 28, textAlign:'center', marginTop: 10}}>{price}</Text>
 
                 </View>
             </View>
@@ -113,6 +115,10 @@ const PlaceRentScreen = ({navigation}) => {
                     />
                 </Modal>
             </View>
+            {/* <View style={styles.totalPrice}>
+                <Text style={styles.totalPriceText}>Total price:</Text>
+                <Text>{price}</Text>
+            </View> */}
             <TouchableOpacity 
                 style={styles.rentButton} 
                 // onPress={post_request}

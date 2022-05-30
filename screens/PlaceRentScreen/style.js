@@ -73,7 +73,14 @@ const styles = StyleSheet.create({
   parkingPlaceTextInfo:{
     flex: 1,
     alignItems: 'center',
+    textAlign: 'center',
     marginTop: 20,
+  },
+  totalPrice:{
+    alignItems: 'center',
+  },
+  totalPriceText:{
+    fontSize: 20,
   }
 
 })
