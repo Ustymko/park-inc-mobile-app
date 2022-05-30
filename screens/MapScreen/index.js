@@ -73,7 +73,7 @@ function MapScreen() {
             longitude: 24.0438791
             
           }}>
-            <Callout onPress={() => navigation.navigate("PlaceRent")}>
+            <Callout onPress={() => navigation.navigate("PlaceRent", {owner: "**tym Buc**", address: "Sadovskogo 6", price:"20 hrn/hour"})}>
               <View>
                 <Text>Rent</Text>
               </View>
@@ -86,7 +86,7 @@ function MapScreen() {
             longitude: 24.051619718060728
           }}
           pinColor="green">
-            <Callout onPress={() => navigation.navigate("PlaceRent")}>
+            <Callout onPress={() => navigation.navigate("PlaceRent", {owner: "**gdan Zavad**", address: "Barvinskih 10 ", price:"19 hrn/hour"})}>
               <Text>Rent</Text>
             </Callout>
           </Marker>
