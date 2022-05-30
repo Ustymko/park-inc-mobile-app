@@ -19,7 +19,10 @@ function HomeScreenButtons () {
             <TouchableOpacity style={styles.myPlacesButton}>
               <Text style={styles.buttonsText}>My places</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.addPlaceButton}>
+            <TouchableOpacity 
+              style={styles.addPlaceButton}
+              onPress={() => navigation.navigate("AddNewPlace")}
+            >
               <Text style={styles.buttonsText}>Add place</Text>
             </TouchableOpacity>
           </View>

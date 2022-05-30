@@ -30,6 +30,28 @@ const PlaceRentScreen = ({navigation}) => {
         setChooseTime(option)
     }
 
+    // const post_request = () =>{
+    //     var dataToSend = {email : 'test.email@gmail.com'}
+    //     var formbody = []
+    //     formbody.push(email + " " + dataToSend[email])
+    //     fetch('http://127.0.0.1:5000/sonoff_ifttt', {
+    //         method: 'POST',
+    //         body: formbody,
+    //         headers:{
+    //             'Content-Type': 'not_encoded'
+    //         },
+    //     })
+    //     .then((response) => response.json())
+    //     .then((responseJson) => {
+    //         alert(JSON.stringify(responseJson))
+    //         console.log(responseJson)
+    //     })
+    //     .catch((error) => {
+    //         alert(JSON.stringify(error))
+    //         console.error(error)
+    //     })
+    // }
+
     return(
         <View style={[styles.container, {marginTop: statusBarHeight}]}>
             <View style={[styles.topPanel, {flexDirection: "row"}]}>
@@ -91,7 +113,10 @@ const PlaceRentScreen = ({navigation}) => {
                     />
                 </Modal>
             </View>
-            <TouchableOpacity style={styles.rentButton}>
+            <TouchableOpacity 
+                style={styles.rentButton} 
+                // onPress={post_request}
+            >
                 <Text style={styles.rentButtonText}>Rent</Text>
             </TouchableOpacity>
             
