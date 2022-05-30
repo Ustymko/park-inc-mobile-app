@@ -26,24 +26,36 @@ const Account = (props) => {
 
             <ScrollView style={styles.scrollView}>
                 <View style={styles.historyParkingPlace}>
-                <Text >
-                    Parking place 0
-                </Text>
+                    <Text style={styles.parkingPlaceText}>Віталік</Text>
+                    <TouchableOpacity >
+                        <Text style={styles.buttonsText}>details</Text>
+                    </TouchableOpacity>
+                    <Text style={styles.parkingPlaceHours}>14:00-16:00</Text>
+                    <Text style={styles.parkingPlaceDate}>12.05.2022</Text>
                 </View>
                 <View style={styles.historyParkingPlace}>
-                <Text>
-                    Parking place 1
-                </Text>
+                    <Text style={styles.parkingPlaceText}>Олег</Text>
+                    <TouchableOpacity >
+                        <Text style={styles.buttonsText}>details</Text>
+                    </TouchableOpacity>
+                    <Text style={styles.parkingPlaceHours}>12:00-13:00</Text>
+                    <Text style={styles.parkingPlaceDate}>02.05.2022</Text>
                 </View>
                 <View style={styles.historyParkingPlace}>
-                <Text>
-                    Parking place 2
-                </Text>
+                    <Text style={styles.parkingPlaceText}>Артур</Text>
+                    <TouchableOpacity >
+                        <Text style={styles.buttonsText}>details</Text>
+                    </TouchableOpacity>
+                    <Text style={styles.parkingPlaceHours}>20:00-21:00</Text>
+                    <Text style={styles.parkingPlaceDate}>29.02.2022</Text>
                 </View>
                 <View style={styles.historyParkingPlace}>
-                <Text>
-                    Parking place 3
-                </Text>
+                    <Text style={styles.parkingPlaceText}>Роберт</Text>
+                    <TouchableOpacity >
+                        <Text style={styles.buttonsText}>details</Text>
+                    </TouchableOpacity>
+                    <Text style={styles.parkingPlaceHours}>12:00-13:00</Text>
+                    <Text style={styles.parkingPlaceDate}>08.11.2021</Text>
                 </View>
         
             </ScrollView>
