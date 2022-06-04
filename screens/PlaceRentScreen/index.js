@@ -2,12 +2,44 @@ import { Text, View, TouchableOpacity, Image, Modal } from "react-native"
 import styles from "./style"
 import Constants from 'expo-constants'
 import React, {useState} from 'react'
-import {DateModalPicker} from '../../components/DateModalPicker'
+import { DateModalPicker } from '../../components/DateModalPicker'
 import { TimeModalPicker } from "../../components/TimeModalPicker"
 
 const statusBarHeight = Constants.statusBarHeight
 
+// const movieURL = "https://reactnative.dev/movies.json";
+
 const PlaceRentScreen = ({route, navigation}) => {
+
+    // const [data, setData] = useState([]);
+    // const [postId, setPostId] = useState([]);
+
+    // post method example
+
+    // const post = () => {
+    //   fetch(movieURL, {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ title: 'React POST Request Example' })
+    //   })
+    //   .then((response) => response.json())
+    //   .then(data => setPostId(data.id))
+    //   .catch((error) => console.error(error))
+    // }
+
+    // get method example 
+
+    // const get = () => {
+    //     fetch(movieURL)
+    //       .then((response) => response.json()) // get response, convert to json
+    //       .then((json) => {
+    //         setData(json.movies);
+    //       })
+    //       .catch((error) => alert(error)) // display errors
+    //       .finally(() => setLoading(false)); // change loading state
+    //   }
+
+
     const {owner, address, price} = route.params
     var backButton = "<--"
     const [chooseData, setChooseData] = useState('Choose the date')
@@ -31,27 +63,6 @@ const PlaceRentScreen = ({route, navigation}) => {
         setChooseTime(option)
     }
 
-    // const post_request = () =>{
-    //     var dataToSend = {email : 'test.email@gmail.com'}
-    //     var formbody = []
-    //     formbody.push(email + " " + dataToSend[email])
-    //     fetch('http://127.0.0.1:5000/sonoff_ifttt', {
-    //         method: 'POST',
-    //         body: formbody,
-    //         headers:{
-    //             'Content-Type': 'not_encoded'
-    //         },
-    //     })
-    //     .then((response) => response.json())
-    //     .then((responseJson) => {
-    //         alert(JSON.stringify(responseJson))
-    //         console.log(responseJson)
-    //     })
-    //     .catch((error) => {
-    //         alert(JSON.stringify(error))
-    //         console.error(error)
-    //     })
-    // }
 
     return(
         <View style={[styles.container, {marginTop: statusBarHeight}]}>
@@ -121,7 +132,7 @@ const PlaceRentScreen = ({route, navigation}) => {
             </View> */}
             <TouchableOpacity 
                 style={styles.rentButton} 
-                // onPress={post_request}
+                onPress={post_request}
             >
                 <Text style={styles.rentButtonText}>Rent</Text>
             </TouchableOpacity>
