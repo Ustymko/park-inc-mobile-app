@@ -83,7 +83,8 @@ const PlaceRentScreen = ({route, navigation}) => {
                     <Text style={{fontSize: 27, textAlign:'center'}}>{owner}</Text>
                     <Text style={{marginTop: 20, fontSize: 20}}>Address:</Text>
                     <Text style={{fontSize: 28, textAlign:'center'}}>{address}</Text>
-                    <Text style={{fontSize: 28, textAlign:'center', marginTop: 10}}>{price}</Text>
+                    <Text style={{marginTop: 20, fontSize: 20}}>Price:</Text>
+                    <Text style={{fontSize: 28, textAlign:'center'}}>{price}</Text>
 
                 </View>
             </View>
@@ -132,7 +133,7 @@ const PlaceRentScreen = ({route, navigation}) => {
             </View> */}
             <TouchableOpacity 
                 style={styles.rentButton} 
-                onPress={post_request}
+                // onPress={post_request}
             >
                 <Text style={styles.rentButtonText}>Rent</Text>
             </TouchableOpacity>
