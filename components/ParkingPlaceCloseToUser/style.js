@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
         height: '15%',
         flexDirection: 'row',
         alignItems:'center',
-        
+        borderLeftWidth: 5,
+        borderRightWidth: 5,
     },
     address:{
         flex: 1,
@@ -20,7 +21,6 @@ const styles = StyleSheet.create({
     },
     details:{
         fontSize: 35,
-        //marginLeft: '5%',
         margin: '5%',
         backgroundColor: '#95c5f5',
         padding: 15,

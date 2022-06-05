@@ -4,14 +4,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    backgroundColor: '#c0eafc',
     alignItems: 'center',
-    //justifyContent: 'center',
   },
   homeScreenButtons:{
     bottom: 0, 
     position: 'absolute', 
     width: '100%'
+  },
+  placesCloseToYou: {
+    fontSize: 30,
+    color:'black', 
+    borderBottomWidth: 2, 
+    borderBottomColor: "#5e89f7",
   }
   });
 
