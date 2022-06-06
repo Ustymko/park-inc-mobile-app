@@ -8,6 +8,7 @@ import RegistrationScreen from './screens/RegistrationScreen';
 import LoginScreen from './screens/LoginScreen';
 import AccountScreen from './screens/AccountScreen';
 import AddNewPlaceScreen from './screens/AddNewPlaceScreen';
+import MyPlacesScreen from './screens/MyPlacesScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -43,6 +44,10 @@ const App = () => {
         <Stack.Screen
           name = "AddNewPlace"
           component={AddNewPlaceScreen}
+        />
+        <Stack.Screen
+          name = "MyPlaces"
+          component={MyPlacesScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

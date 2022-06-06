@@ -16,7 +16,10 @@ function HomeScreenButtons () {
           </TouchableOpacity>
 
           <View style={{flexDirection: 'row'}}>
-            <TouchableOpacity style={styles.myPlacesButton}>
+            <TouchableOpacity 
+              style={styles.myPlacesButton}
+              onPress={() => navigation.navigate("MyPlaces")}
+            >
               <Text style={styles.buttonsText}>My places</Text>
             </TouchableOpacity>
             <TouchableOpacity 
