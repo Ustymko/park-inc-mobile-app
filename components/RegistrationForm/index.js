@@ -8,7 +8,7 @@ import {
 import styles from "./style";
 import { useNavigation } from "@react-navigation/native";
 
-const RegistrationForm = (props) => {
+const RegistrationForm = () => {
     const navigation = useNavigation();
     const [email, Email] = React.useState("");
     const [password, Password] = React.useState("");
@@ -32,7 +32,6 @@ const RegistrationForm = (props) => {
             <TextInput style ={styles.textinput} placeholder="Confirm password"
             secureTextEntry={true} underlineColorAndroid={'transparent'}
             />
-            
             
             <TouchableOpacity onPress={() => navigation.navigate("Home")} style={styles.regbutton}>
                 <Text style={styles.btntext}>Sign up</Text>

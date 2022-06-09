@@ -1,13 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, {useEffect, isSelectionModeEnabled, disableSelectionMode} from 'react';
 import { View, Text } from 'react-native';
 import HomeScreenButtons from '../../components/HomeScreenButtons';
 import HomeScreenTopPanel from '../../components/HomeScreenTopPanel';
 import ParkingPlaceCloseToUser from '../../components/ParkingPlaceCloseToUser';
 import styles from './style';
+import { useNavigation } from '@react-navigation/native';
+const HomeScreen = () => {
 
-const HomeScreen = ({ navigation }) => {
-  
     return (
       <View style={styles.container}>
         <HomeScreenTopPanel/>

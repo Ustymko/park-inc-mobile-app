@@ -8,24 +8,21 @@ import { TimeModalPicker } from "../../components/TimeModalPicker"
 const statusBarHeight = Constants.statusBarHeight
 
 // const movieURL = "https://reactnative.dev/movies.json";
+const iftttUrl = "https://ostap1729.pythonanywhere.com/sonoff_ifttt"
 
 const PlaceRentScreen = ({route, navigation}) => {
 
     // const [data, setData] = useState([]);
-    // const [postId, setPostId] = useState([]);
+    const [postId, setPostId] = useState([]);
 
-    // post method example
-
-    // const post = () => {
-    //   fetch(movieURL, {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ title: 'React POST Request Example' })
-    //   })
-    //   .then((response) => response.json())
-    //   .then(data => setPostId(data.id))
-    //   .catch((error) => console.error(error))
-    // }
+    const post = () => {
+      fetch(iftttUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: 'React POST Request Example' })
+      })
+      .catch((error) => console.error(error))
+    }
 
     // get method example 
 
@@ -133,7 +130,7 @@ const PlaceRentScreen = ({route, navigation}) => {
             </View> */}
             <TouchableOpacity 
                 style={styles.rentButton} 
-                // onPress={post_request}
+                onPress={post}
             >
                 <Text style={styles.rentButtonText}>Rent</Text>
             </TouchableOpacity>
