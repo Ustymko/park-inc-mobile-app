@@ -8,7 +8,7 @@ var statusBarHeight = Constants.statusBarHeight
 const movieURL = "https://reactnative.dev/movies.json";
 const DATA = [
     { "id": "1", "address": "Vyhovskoho 10", "price": "10" },
-    { "id": "2", "address": "Vyhovskoho 10", "price": "20" },
+    { "id": "2", "address": "Vyhovskoho 12", "price": "20" },
 ]
 
 const MyPlacesScreen = () => {
@@ -50,12 +50,24 @@ const MyPlacesScreen = () => {
             keyExtractor={({ id }) => id}
             renderItem={({ item }) => (
               <View style={styles.place}>
-                <Text style={styles.movieText}>
-                  #{item.id} {item.address}, {item.price}
-                </Text>
-                <TouchableOpacity style={styles.openTheGates}>
-                    <Text style={{fontSize: 20}}>Open the gates</Text>
-                </TouchableOpacity>
+                <View style={styles.placeNumber}>
+                  <Text style={styles.placeNumberText}>
+                    {item.id} 
+                  </Text>
+                </View>
+                <View style={{flex: 8, alignItems: 'center'}}>
+                  <Text style={styles.address}>{item.address}</Text>
+                  <View style={{height: 1, borderColor: "black", borderBottomWidth: 1, width: '80%'}}></View>
+                  <Text style={styles.price}>{item.price} hrn/hour</Text>
+                  <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                    <TouchableOpacity style={styles.openTheGates}>
+                      <Text style={styles.openTheGatesText}>Open the gates</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={{flex: 1, alignItems: 'center'}}>
+                      <Text style={{fontSize: 20, borderBottomWidth: 1}}>Edit</Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
               </View>
             )}
           />
