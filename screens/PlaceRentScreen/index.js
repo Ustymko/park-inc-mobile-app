@@ -19,12 +19,12 @@ const PlaceRentScreen = ({route, navigation}) => {
     const [postId, setPostId] = useState([]);
 
     const post = () => {
-      fetch(iftttUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title: 'React POST Request Example' })
-      })
-      .catch((error) => console.error(error))
+    //   fetch(iftttUrl, {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ title: 'React POST Request Example' })
+    //   })
+    //   .catch((error) => console.error(error))
       screensNavigation.navigate("SuccessfulRented")
     }
 
