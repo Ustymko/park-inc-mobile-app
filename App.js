@@ -9,6 +9,7 @@ import LoginScreen from './screens/LoginScreen';
 import AccountScreen from './screens/AccountScreen';
 import AddNewPlaceScreen from './screens/AddNewPlaceScreen';
 import MyPlacesScreen from './screens/MyPlacesScreen';
+import SuccessfulRentedScreen from './screens/SuccessfulRentedScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -39,6 +40,10 @@ const App = () => {
         <Stack.Screen
           name = "PlaceRent"
           component={PlaceRentScreen}
+        />
+        <Stack.Screen
+          name = "SuccessfulRented"
+          component={SuccessfulRentedScreen}
         />
         <Stack.Screen
           name = "AddNewPlace"

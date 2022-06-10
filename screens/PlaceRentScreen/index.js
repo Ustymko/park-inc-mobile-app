@@ -4,6 +4,7 @@ import Constants from 'expo-constants'
 import React, {useState} from 'react'
 import { DateModalPicker } from '../../components/DateModalPicker'
 import { TimeModalPicker } from "../../components/TimeModalPicker"
+import { useNavigation } from "@react-navigation/native"
 
 const statusBarHeight = Constants.statusBarHeight
 
@@ -11,6 +12,8 @@ const statusBarHeight = Constants.statusBarHeight
 const iftttUrl = "https://ostap1729.pythonanywhere.com/sonoff_ifttt"
 
 const PlaceRentScreen = ({route, navigation}) => {
+
+    const screensNavigation = useNavigation()
 
     // const [data, setData] = useState([]);
     const [postId, setPostId] = useState([]);
@@ -22,6 +25,7 @@ const PlaceRentScreen = ({route, navigation}) => {
         body: JSON.stringify({ title: 'React POST Request Example' })
       })
       .catch((error) => console.error(error))
+      screensNavigation.navigate("SuccessfulRented")
     }
 
     // get method example 
