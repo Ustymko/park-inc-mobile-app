@@ -2,9 +2,7 @@ import React from 'react'
 import {Text, View, ScrollView, TouchableOpacity, Dimensions} from 'react-native'
 import styles from './style'
 
-const OPTIONS = ['10:00 - 11:00', '11:00 - 12:00', '12:00 - 13:00',
-                '13:00 - 14:00', '14:00 - 15:00', '15:00 - 16:00',
-                '16:00 - 17:00', '17:00 - 18:00']
+const OPTIONS = ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00']
 const WIDTH = Dimensions.get('window').width
 const HEIGHT = Dimensions.get('window').height
 const TimeModalPicker = (props) => {

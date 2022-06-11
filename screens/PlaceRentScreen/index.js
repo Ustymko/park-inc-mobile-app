@@ -1,10 +1,11 @@
-import { Text, View, TouchableOpacity, Image, Modal } from "react-native"
+import { Text, View, TouchableOpacity, Image, Modal, Platform, Button } from "react-native"
 import styles from "./style"
 import Constants from 'expo-constants'
 import React, {useState} from 'react'
 import { DateModalPicker } from '../../components/DateModalPicker'
 import { TimeModalPicker } from "../../components/TimeModalPicker"
 import { useNavigation } from "@react-navigation/native"
+import DateTimePickerModal from "react-native-modal-datetime-picker"
 
 const statusBarHeight = Constants.statusBarHeight
 
@@ -15,7 +16,7 @@ const PlaceRentScreen = ({route, navigation}) => {
 
     const screensNavigation = useNavigation()
 
-    // const [data, setData] = useState([]);
+   
     const [postId, setPostId] = useState([]);
 
     const post = () => {
@@ -27,6 +28,8 @@ const PlaceRentScreen = ({route, navigation}) => {
     //   .catch((error) => console.error(error))
       screensNavigation.navigate("SuccessfulRented")
     }
+
+    // const [data, setData] = useState([]);
 
     // get method example 
 
@@ -40,31 +43,45 @@ const PlaceRentScreen = ({route, navigation}) => {
     //       .finally(() => setLoading(false)); // change loading state
     //   }
 
-
     const {owner, address, price} = route.params
     var backButton = "<--"
-    const [chooseData, setChooseData] = useState('Choose the date')
-    const [chooseTime, setChooseTime] = useState('Choose time gap')
-    const [isModalVisible, setisModalVisible] = useState(false)
-    const [isTimeModalVisible, setIsTimeModalVisible] = useState(false)
+    const [date, setDate] = useState(new Date())
+    const [chooseDate, setChooseDate] = useState('YYYY-MM-DD')
+    const [chooseTimeFrom, setChooseTimeFrom] = useState('--:--')
+    const [chooseTimeTo, setChooseTimeTo] = useState('--:--')
+    const [isTimeFromModalVisible, setIsTimeFromModalVisible] = useState(false)
+    const [isTimeToModalVisible, setIsTimeToModalVisible] = useState(false)
+    const [isDatePickerVisible, setDatePickerVisibility] = useState(false)
 
-    const changeModalVisibility = (bool) => {
-        setisModalVisible(bool)
+    const changeTimeFromModalVisibility = (bool) => {
+        setIsTimeFromModalVisible(bool)
     }
 
-    const setData = (option) => {
-        setChooseData(option)
+    const changeTimeToModalVisibility = (bool) => {
+        setIsTimeToModalVisible(bool)
     }
 
-    const changeTimeModalVisibility = (bool) => {
-        setIsTimeModalVisible(bool)
+    const setTimeFrom = (option) => {
+        setChooseTimeFrom(option)
     }
 
-    const setTime = (option) => {
-        setChooseTime(option)
+    const setTimeTo = (option) => {
+        setChooseTimeTo(option)
     }
 
+    const showDatePicker = () => {
+        setDatePickerVisibility(true);
+    }
 
+    const hideDatePicker = () => {
+        setDatePickerVisibility(false);
+    }
+
+    const handleConfirmDate = (date) => {
+        setChooseDate(date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate())
+        hideDatePicker();
+    }
+    
     return(
         <View style={[styles.container, {marginTop: statusBarHeight}]}>
             <View style={[styles.topPanel, {flexDirection: "row"}]}>
@@ -91,47 +108,70 @@ const PlaceRentScreen = ({route, navigation}) => {
             </View>
             
             <View style = {styles.modalPickerView}>
+                <Text>Date</Text>
                 <TouchableOpacity 
-                    onPress={() => changeModalVisibility(true)}
+                    onPress={() => showDatePicker()}
                     style={styles.touchableOpacity}
-                    
                 >
-                    <Text style={styles.text}>{chooseData}</Text>
+                    <Text style={styles.text}>{chooseDate}</Text>
                 </TouchableOpacity>
+
+                <View style={{flexDirection: 'row'}}>
+                    <View style={{flexDirection: 'column', flex: 1, alignItems: 'center'}}>
+                    <View>
+                    <Text>From</Text>
+                    </View>
+                        <TouchableOpacity
+                            onPress={() => setIsTimeFromModalVisible(true)}
+                            style={styles.touchableOpacity}
+                        >
+                            <Text style={styles.text}>{chooseTimeFrom}</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={{flexDirection: 'column', flex: 1, alignItems: 'center'}}>
+                        <Text>To</Text>
+                        <TouchableOpacity
+                            onPress={() => setIsTimeToModalVisible(true)}
+                            style={styles.touchableOpacity}
+                        >
+                           <Text style={styles.text}>{chooseTimeTo}</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+
                 <Modal
                     transparent={true}
                     animationType='slide'
-                    visible={isModalVisible}
-                    onRequestClose={() => changeModalVisibility(false)}
-                >
-                    <DateModalPicker
-                        changeModalVisibility={changeModalVisibility}
-                        setData={setData}
-                    />
-                </Modal>
-                <TouchableOpacity 
-                    onPress={() => changeTimeModalVisibility(true)}
-                    style={styles.touchableOpacity}
-                    
-                >
-                    <Text style={styles.text}>{chooseTime}</Text>
-                </TouchableOpacity>
-                <Modal
-                    transparent={true}
-                    animationType='slide'
-                    visible={isTimeModalVisible}
-                    onRequestClose={() => changeTimeModalVisibility(false)}
+                    visible={isTimeFromModalVisible}
+                    onRequestClose={() => changeTimeFromModalVisibility(false)}
                 >
                     <TimeModalPicker
-                        changeTimeModalVisibility={changeTimeModalVisibility}
-                        setTime={setTime}
+                        changeTimeModalVisibility={changeTimeFromModalVisibility}
+                        setTime={setTimeFrom}
+                    />
+                </Modal>
+
+                <Modal
+                    transparent={true}
+                    animationType='slide'
+                    visible={isTimeToModalVisible}
+                    onRequestClose={() => changeTimeToModalVisibility(false)}
+                >
+                    <TimeModalPicker
+                        changeTimeModalVisibility={changeTimeToModalVisibility}
+                        setTime={setTimeTo}
                     />
                 </Modal>
             </View>
-            {/* <View style={styles.totalPrice}>
-                <Text style={styles.totalPriceText}>Total price:</Text>
-                <Text>{price}</Text>
-            </View> */}
+            <DateTimePickerModal
+                isVisible={isDatePickerVisible}
+                mode="date"
+                onConfirm={handleConfirmDate}
+                onCancel={hideDatePicker}
+                is24Hour={true}
+                minimumDate={new Date(date)}
+            />
+
             <TouchableOpacity 
                 style={styles.rentButton} 
                 onPress={post}
