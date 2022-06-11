@@ -1,15 +1,13 @@
-import { Text, View, TouchableOpacity, Image, Modal, Platform, Button } from "react-native"
+import { Text, View, TouchableOpacity, Image, Modal } from "react-native"
 import styles from "./style"
 import Constants from 'expo-constants'
 import React, {useState} from 'react'
-import { DateModalPicker } from '../../components/DateModalPicker'
 import { TimeModalPicker } from "../../components/TimeModalPicker"
 import { useNavigation } from "@react-navigation/native"
 import DateTimePickerModal from "react-native-modal-datetime-picker"
 
 const statusBarHeight = Constants.statusBarHeight
 
-// const movieURL = "https://reactnative.dev/movies.json";
 const iftttUrl = "https://ostap1729.pythonanywhere.com/sonoff_ifttt"
 
 const PlaceRentScreen = ({route, navigation}) => {
