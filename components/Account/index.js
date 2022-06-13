@@ -26,7 +26,7 @@ const Account = (props) => {
 
             <ScrollView style={styles.scrollView}>
                 <View style={styles.historyParkingPlace}>
-                    <Text style={styles.parkingPlaceText}>Віталік</Text>
+                    <Text style={styles.parkingPlaceText}>Vitalik</Text>
                     <TouchableOpacity 
                         onPress={() => navigation.navigate("PlaceRent", {owner: "Vitalik", address: "Vyhovskoho 7", price: "12 hrn/hour"})}
                     >
@@ -36,7 +36,7 @@ const Account = (props) => {
                     <Text style={styles.parkingPlaceDate}>12.05.2022</Text>
                 </View>
                 <View style={styles.historyParkingPlace}>
-                    <Text style={styles.parkingPlaceText}>Олег</Text>
+                    <Text style={styles.parkingPlaceText}>Oleg</Text>
                     <TouchableOpacity 
                         onPress={() => navigation.navigate("PlaceRent", {owner: "Oleg", address: "Shevhcenka 40", price: "13 hrn/hour"})}
                     >
@@ -46,7 +46,7 @@ const Account = (props) => {
                     <Text style={styles.parkingPlaceDate}>02.05.2022</Text>
                 </View>
                 <View style={styles.historyParkingPlace}>
-                    <Text style={styles.parkingPlaceText}>Артур</Text>
+                    <Text style={styles.parkingPlaceText}>Artur</Text>
                     <TouchableOpacity 
                         onPress={() => navigation.navigate("PlaceRent", {owner: "Artur", address: "Dovbusha 5", price: "10 hrn/hour"})}
                     >
@@ -56,7 +56,7 @@ const Account = (props) => {
                     <Text style={styles.parkingPlaceDate}>29.02.2022</Text>
                 </View>
                 <View style={styles.historyParkingPlace}>
-                    <Text style={styles.parkingPlaceText}>Роберт</Text>
+                    <Text style={styles.parkingPlaceText}>Robert</Text>
                     <TouchableOpacity 
                         onPress={() => navigation.navigate("PlaceRent", {owner: "Robert", address: "Pidvalna 2", price: "14 hrn/hour"})}
                     >

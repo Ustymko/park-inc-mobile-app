@@ -1,10 +1,11 @@
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 import styles from './style';
+import AddParkingPlace from '../../components/AddParkingPlace';
 
 const AddNewPlaceScreen = ({navigation}) =>{
     return(
         <View style={styles.container}>
-            <Text>This is Add new place screen </Text>
+            <AddParkingPlace/>
         </View>
     )
 }
