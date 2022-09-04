@@ -1,22 +1,50 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
     Text,
     View,
     Image,
     TextInput,
     ScrollView,
-    TouchableOpacity
+    TouchableOpacity,
+    Platform
 } from 'react-native'
 import styles from "./style";
 import { useNavigation } from "@react-navigation/native";
+import * as ImagePicker from 'expo-image-picker';
+import Constants from 'expo-constants';
 
 const Account = (props) => {
     const navigation = useNavigation();
+    const [image, setImage] = useState(null);
+
+    useEffect( async () => {
+        if (Platform.OS !== 'web'){
+            const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+            if (status !== 'granted'){
+                alert('Permission denied')
+            }
+        }
+    },[])
+
+    const PickImage = async () => {
+        let result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.Images,
+            allowsEditing: true,
+            aspect:[4,3],
+            quality: 1
+        })
+        console.log(result)
+        if (!result.cancelled){
+            setImage(result.uri)
+        }
+    }
+
     return(
         <View style={styles.container}>
-            <Image style={styles.avatar} source={require('../../assets/avatardefault.png')}/>
-
-            <Text style={styles.changephoto}>Change photo</Text>
+            {!image && <Image style={styles.avatar} source={require('../../assets/avatardefault.png')}/>}
+            {image && <Image style={styles.avatar} source={{uri:image}}/>}
+            <Text onPress={PickImage} style={styles.changephoto}>Change photo</Text>
+            
 
             <TextInput style ={styles.textinput} placeholder="Name"/>
             <TextInput style ={styles.textinput} placeholder="Phone number"/>

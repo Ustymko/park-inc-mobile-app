@@ -28,11 +28,12 @@ const styles = StyleSheet.create({
         width: 180,
         height: 180,
         marginTop: 30,
+        borderRadius: 100,
 
     },
 
     changephoto:{
-
+      
     },
 
     history:{
