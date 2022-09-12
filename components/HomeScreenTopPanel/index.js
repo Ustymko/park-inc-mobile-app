@@ -14,9 +14,9 @@ function HomeScreenTopPanel(){
             </TouchableOpacity>
             
             <Text style={styles.panelText}>Park.inc</Text>
-            <View style={{flex: 1}}>
-                <Image style={styles.settingsIcon} source={require('../../assets/settings-icon.png')}/>
-            </View>
+            <TouchableOpacity onPress={() => navigation.navigate("Settings")} style={{flex: 1}} >
+                <Image style={styles.settingsIcon} source={require('../../assets/settings-icon.png')} />
+            </TouchableOpacity>
         </View>
     )
 }

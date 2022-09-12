@@ -10,6 +10,7 @@ import AccountScreen from './screens/AccountScreen';
 import AddNewPlaceScreen from './screens/AddNewPlaceScreen';
 import MyPlacesScreen from './screens/MyPlacesScreen';
 import SuccessfulRentedScreen from './screens/SuccessfulRentedScreen';
+import SettingsScreen from './screens/SettingsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,6 +33,10 @@ const App = () => {
         <Stack.Screen
           name="Account"
           component={AccountScreen}
+        />
+        <Stack.Screen
+          name="Settings"
+          component={SettingsScreen}
         />
         <Stack.Screen 
           name = "Map"
